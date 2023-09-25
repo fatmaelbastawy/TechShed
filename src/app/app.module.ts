@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { ProductService } from './Products/services/Product.service';
 import { ProductsModule } from './Products/Products.module';
 import { CartModule } from './Cart/Cart.module';
+import { SharedModule } from './Shared/Shared.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { CartModule } from './Cart/Cart.module';
     BrowserModule,
     AppRoutingModule,
     ProductsModule,
-    CartModule
+    CartModule,
+    SharedModule,
+    FontAwesomeModule
 
 
   ],
