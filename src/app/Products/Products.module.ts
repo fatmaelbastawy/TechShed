@@ -4,13 +4,17 @@ import { CommonModule } from '@angular/common';
 import { ProductService } from './services/Product.service';
 
 import { AllProductComponent } from './components/AllProduct/AllProduct/AllProduct.component';
+import{HttpClientModule} from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AllProductComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     ProductService

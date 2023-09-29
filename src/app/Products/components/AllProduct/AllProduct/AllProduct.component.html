@@ -1,17 +1,17 @@
 <section class="mt-5">
-<div class="containe-fluid ">
+<div class="container-fluid ">
   <div class="title mb-5"><h1><strong>Shop All</strong></h1></div>
-  <div class="row">
-    <select name="" id="" >
-      <option value="" selected>Sort by</option>
-      <option value="">Price(low to high)</option>
-      <option value="">Price(high to low)</option>
-      <option value="">Name(A-Z)</option>
-      <option value="">Name(Z-A)</option>
+  <div class="row mb-5">
+    <select name="" id="" [(ngModel)]="selectedOption" (change)="filterProducts(selectedOption)">
+      <option value="Sort by" selected >Sort by</option>
+      <option value="Price(low to high)">Price(low to high)</option>
+      <option value="Price(high to low)">Price(high to low)</option>
+      <option value="Name(A-Z)">Name(A-Z)</option>
+      <option value="Name(Z-A)">Name(Z-A)</option>
     </select>
   </div>
-  <div class="row">
-    <div class="filter">
+  <div class="row" dir="ltr">
+  <div class="filter col-lg-3 col-md-4 col-sm-6">
       <h2>Filter by</h2>
       <hr>
       <div class="filterbycat">
@@ -20,10 +20,10 @@
         <div class="col-4 toggle" id="toggle" (click)="showToggle()">
           {{ isTogglevisible ? '-' : '+' }}
         </div>
-        <ul class="" [hidden]="!isTogglevisible">
-          <li class="option">All</li>
-          <li class="option">Sale</li>
-          <li class="option">Computers</li>
+        <ul class="" [hidden]="!isTogglevisible" >
+           <li id="all"(click)="Addactive($event)" class="active">All</li>
+
+          <li class="option" id="option" *ngFor="let item of Categories" (click)="filtercat($event)" [ngClass]="{'active': selectedItem === item}" (click)="selectItem(item)">{{item}}</li>
         </ul>
        </div>
       </div>
@@ -34,63 +34,37 @@
         <div class="col-4 toggle" id="toggle" (click)="showToggleP()">
           {{ isTogglePvisible ? '+' : '-' }}
         </div>
-        <div class="range">
+        <!-- <div class="range">
           <input type="range" min="0" max="85" value="0" id="range" />
           <div class="value" id="value"></div>
+        </div> -->
+
+        <div class="card"[hidden]="isTogglePvisible">
+
+
         </div>
-        <div class="card">
-          <h4>Price Range Slider</h4>
 
-          <div class="price-content">
-            <div>
-              <label>Min</label>
-              <p id="min-value">$50</p>
-            </div>
+    </div>
+    <span class="clear-filter" *ngIf="selectedItem" (click)="clearFilter()">clear filter x</span>
+    </div>
+    <div class="container col-lg-9 col-md-8 col-sm-6">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12"  *ngFor="let card of Products">
+          <div class="card border rounded" > <!-- *ngIf="card.id <=8 || showCards" -->
 
-            <div>
-              <label>Max</label>
-              <p id="max-value">$500</p>
-            </div>
+            <img class="img-fluid" src={{card.image}} alt="">
+            <p>{{card.title}}</p>
+            <span>{{card.price}}</span>
           </div>
-
-            <div class="range-slider">
-              <input type="range" class="min-price" value="100" min="10" max="500" step="10">
-              <input type="range" class="max-price" value="250" min="10" max="500" step="10">
-            </div>
         </div>
+        <!-- <button class="btn btn-primary mt-5 mb-5" type="submit" (click)="showCards=true" *ngIf="!showCards">Load more</button> -->
 
-        <script>
-        let minValue = document.getElementById("min-value");
-          let maxValue = document.getElementById("max-value");
-
-          function validateRange(minPrice, maxPrice) {
-            if (minPrice > maxPrice) {
-
-              // Swap to Values
-              let tempValue = maxPrice;
-              maxPrice = minPrice;
-              minPrice = tempValue;
-            }
-
-            minValue.innerHTML = "$" + minPrice;
-            maxValue.innerHTML = "$" + maxPrice;
-          }
-
-          const inputElements = document.querySelectorAll("input");
-
-          inputElements.forEach((element) => {
-            element.addEventListener("change", (e) => {
-              let minPrice = parseInt(inputElements[0].value);
-              let maxPrice = parseInt(inputElements[1].value);
-
-              validateRange(minPrice, maxPrice);
-            });
-          });
-
-          validateRange(inputElements[0].value, inputElements[1].value);</script>
       </div>
     </div>
-    </div>
+
+
+
   </div>
+</div>
 </div>
 </section>

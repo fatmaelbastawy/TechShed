@@ -207,3 +207,39 @@ input[type=range]::-webkit-slider-runnable-track {
   border-radius: 3px;
   border: none;
 }
+
+.cards{
+  display:flex;
+
+  align-items: center;
+}
+.card
+{
+  width:200px;
+  height:250px
+}
+.card img{
+  width:100px;
+  height: 100px;
+}
+
+.btn{
+  width:226px;
+  height:48px;
+  border-radius: 100px;
+  background-color: #751FFF;
+  transition:  0.15s ease-in-out, background-color
+}
+.btn :hover
+{
+  opacity:0.5;
+
+}
+.clear-filter{
+  cursor: pointer;
+}
+.clear-filter:hover{
+  color:#949494
+}
+
+
