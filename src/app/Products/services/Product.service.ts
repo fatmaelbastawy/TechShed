@@ -23,4 +23,9 @@ getAllCategories(){
 getProductByCategory(catName:string){
   return this.http.get("https://fakestoreapi.com/products/category/"+ catName)
 }
+
+getProductById(id:any){
+
+  return this.http.get("https://fakestoreapi.com/products/"+ id);
+}
 }

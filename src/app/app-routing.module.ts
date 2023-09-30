@@ -7,7 +7,7 @@ import { NotfoundComponent } from './Shared/components/Notfound/Notfound.compone
 
 const routes: Routes = [
   {path:"AllProducts",component:AllProductComponent},
-  {path:"Details",component:ProductDetailsComponent},
+  {path:"Details/:id",component:ProductDetailsComponent},
   {path:"cart",component:CartComponent},
   {path:"",redirectTo:"AllProducts",pathMatch:'full'},
   {path:"**",component:NotfoundComponent}

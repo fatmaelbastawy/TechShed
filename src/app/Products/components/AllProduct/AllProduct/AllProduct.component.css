@@ -213,15 +213,7 @@ input[type=range]::-webkit-slider-runnable-track {
 
   align-items: center;
 }
-.card
-{
-  width:200px;
-  height:250px
-}
-.card img{
-  width:100px;
-  height: 100px;
-}
+
 
 .btn{
   width:226px;

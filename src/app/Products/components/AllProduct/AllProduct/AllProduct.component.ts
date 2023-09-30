@@ -13,7 +13,7 @@ export class AllProductComponent implements OnInit {  @ViewChild('sliderEl') sli
 sliderValue: number = 0;
 showCards:boolean=false;
  selectedItem: string="";
-// Products:any[]=[];
+loading:boolean=false;
 
 ngOnInit() {
 
@@ -74,15 +74,19 @@ selectedOption:string="Sort by"
 
 
   getAllPros(){
+    this.loading=true;
     this.service.getAllProducts().subscribe(res=>{
     this.Products=res as any[];
+    this.loading=false;
     console.log(res)})
 
   }
 
   getAllCats(){
+    this.loading=true;
     this.service.getAllCategories().subscribe(res=>{
     this.Categories=res as any[];
+    this.loading=false;
     console.log(res)})
 
   }
@@ -98,8 +102,10 @@ this.getProductByCat(value);
  }
 
  getProductByCat(catName:string){
+  this.loading=true;
   this.service.getProductByCategory(catName).subscribe(res=>{
     this.Products=res as any[];
+    this.loading=false;
 
   })
  }

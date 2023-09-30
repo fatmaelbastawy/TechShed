@@ -8,6 +8,8 @@ import { ProductsModule } from './Products/Products.module';
 import { CartModule } from './Cart/Cart.module';
 import { SharedModule } from './Shared/Shared.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { RouterModule } from '@angular/router';
+RouterModule
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ProductsModule,
     CartModule,
     SharedModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    RouterModule
 
 
   ],
