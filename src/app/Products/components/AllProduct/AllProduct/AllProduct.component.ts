@@ -87,7 +87,11 @@ selectedOption:string="Sort by"
     this.service.getAllCategories().subscribe(res=>{
     this.Categories=res as any[];
     this.loading=false;
-    console.log(res)})
+    console.log(res)}
+    // ,Error{
+    //   alert("Error")
+    // }
+    )
 
   }
 

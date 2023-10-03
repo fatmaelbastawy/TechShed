@@ -22,15 +22,12 @@
     <label class="mb-2 mt-4" >Quantity</label><br>
     <input type="number" placeholder="1" min="1" max="10" class="mb-5">
 
-    <button class="btn cart rounded-5 mb-2">Add to Cart</button>
-    <button type="button" class="btn  buy rounded-5 " (click)="openModal()" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy Now</button>
+    <button class="btn cart rounded-5 mb-2" (click)="addToCart(prod)">Add to Cart</button>
+    <button type="button" class="btn  buy rounded-5 " (click)="openModal()">Buy Now</button>
 
 
 
-  <!-- Modal -->
 
-
-  <ng-container *ngTemplateOutlet="exampleModal"></ng-container>
 
     </div>
   </div>

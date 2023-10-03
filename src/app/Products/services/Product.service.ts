@@ -28,4 +28,8 @@ getProductById(id:any){
 
   return this.http.get("https://fakestoreapi.com/products/"+ id);
 }
+
+addToCart(id:number){
+  return this.getProductById(id);
+}
 }

@@ -9,11 +9,13 @@ import { CartModule } from './Cart/Cart.module';
 import { SharedModule } from './Shared/Shared.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
+import { CheckoutComponent } from './Cart/components/Checkout/checkout.component';
 RouterModule
 
 @NgModule({
   declarations: [
     AppComponent,
+    CheckoutComponent,
 
   ],
   imports: [

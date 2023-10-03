@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { Cartservice } from './services/cart.service';
-import { CartComponent } from './components/Cart.component';
+import { CartComponent } from './components/Cart/Cart.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,8 @@ import { CartComponent } from './components/Cart.component';
     Cartservice
   ],
   exports: [
-    CartComponent
+    CartComponent,
+    
   ]
 })
 export class CartModule { }

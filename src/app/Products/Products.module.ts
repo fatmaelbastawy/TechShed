@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { SpinnerComponent } from '../Shared/components/spinner/spinner.component';
 import { SharedModule } from '../Shared/Shared.module';
 import { ProductComponent } from './components/product/product.component';
+import { CartModule } from '../Cart/Cart.module';
 @NgModule({
   schemas: [NO_ERRORS_SCHEMA]
 ,
@@ -23,6 +24,7 @@ import { ProductComponent } from './components/product/product.component';
     FormsModule,
     SharedModule,
     RouterModule,
+    CartModule
 
 
   ],

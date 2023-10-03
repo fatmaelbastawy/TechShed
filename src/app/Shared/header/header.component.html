@@ -18,8 +18,8 @@
     <li class="header-icon "><i class="fa-solid fa-circle-user"></i> Log In</li>
     <li class="header-icon fav"><i class="fa-regular fa-heart"></i> Favorites</li>
     <li class="header-icon cart">
-      <i class="fa-solid fa-cart-shopping mt-1"></i>
-      <div class="counter rounded-circle text-light ms-2 pb-1">0</div>
+      <i class="fa-solid fa-cart-shopping mt-1" (click)="goToCart()"></i>
+      <span class="cart-count">{{ getCartItemsCount() }}</span>
     </li>
   </ul>
 </div>
