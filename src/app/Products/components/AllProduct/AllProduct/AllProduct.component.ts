@@ -90,7 +90,7 @@ selectedOption:string="Sort by"
     console.log(res)}
     // ,Error{
     //   alert("Error")
-    // }
+    //}
     )
 
   }

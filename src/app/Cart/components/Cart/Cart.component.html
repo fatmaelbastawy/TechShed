@@ -1,32 +1,37 @@
 <section>
   <div class="container-fluid mt-5">
+    <div class="row">
+      <div class="col-lg-8 col-md-12 col-sm-12">
+        <h4 class="title">My Cart</h4>
+        <hr class="product"><br>
+        <div class="items">
+          <div class="row ">
+            <div class="col-9 mb-5 p-3 prodetails " id="prodetails" *ngFor="let item of cartService.cartItems">
+              <div class="row">
+                <div class="col-3">
+                  <img src="{{item.image}}" alt="" class="border p-3">
+                </div>
+                <div class="text col-3">
+                  <h6>{{item.title}}</h6>
+                  <h6>{{item.price}}</h6>
+                </div>
+                <div class="custom-num col-3">
+                  <span>-</span>
+                  <input type="number" min="1" max="10" style="text-align: center;">
+                  <span>+</span>
+                </div>
+                 <div class="col-3 total ">
+              <h6 class="updatedSalary me-3">$70.00</h6>
+              <span class="close" id="close" (click)="deletePro(item)">&times;</span>
+            </div>
+              </div><br>
+            </div>
 
-    <div class=" col-lg-8 col-md-12 col-sm-12 ">
-  <h4 class="title">My Cart</h4>
-  <hr class="product"><br>
- <div class="items">
-
-
-      <div class="prodetails col-9 mb-5 p-3" id="prodetails" *ngFor="let item of cartService.cartItems">
-        <img src="{{item.image}}" alt="" class="border p-3">
-        <div class="text">
-        <h6>{{item.title}}</h6>
-        <h6>{{item.price}}</h6>
+          </div>
+          <hr class="product">
+        </div>
       </div>
-        <div class="custom-num">
-          <span>-</span>
-          <input type="number" min="1" max="10" style="text-align: center;">
-        <span>+</span>
-       </div><br>
-
-      </div>
-<hr class="product ">
-      <div class="total col-3">
-       <h6 class="updatedSalary">$70.00</h6>
-       <span class="close" id="close" (click)="deletePro(item)">&times;</span>
-      </div>
+      <div class="col-lg-4 col-md-12 col-sm-12" id="order"></div>
     </div>
-    </div>
-    <div class="order col-lg-4 col-md-12 col-sm-12 " id="order"></div>
   </div>
 </section>

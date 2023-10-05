@@ -13,12 +13,13 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
-  
+
   goToCart(): void {
     this.router.navigate(['/cart']);
   }
 
   getCartItemsCount(): number {
     return this.cartService.getCartItems().length;
+    
   }
 }

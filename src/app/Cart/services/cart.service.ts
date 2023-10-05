@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class Cartservice {
 
-  
+
   public cartItems: any[] = [];
 constructor() {
 
@@ -42,6 +42,9 @@ removeFromCart(item: any): void {
 getCartItems(): any[] {
   return this.cartItems;
 }
+
+
+
 
 
 }

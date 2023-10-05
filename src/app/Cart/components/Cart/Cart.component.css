@@ -3,18 +3,27 @@ img{
   height: 100px;
 }
 
-.prodetails{
+
+
+.total{
   display: flex;
-  justify-content: space-around;
-}
-
-.close{
+  justify-content: center;
+  align-items: start;
 
 }
 
 
-.items
+
+.items {
+  display: flex;
+}
+.custom-num {
+  display: flex;
+}
+.custom-num input{
+  height:30px
+}
+.close
 {
-  display: flex;
-  justify-content: start;
+  cursor: pointer;
 }

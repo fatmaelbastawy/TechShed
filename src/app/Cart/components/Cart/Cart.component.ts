@@ -18,15 +18,32 @@ constructor(public cartService: Cartservice) {}
 
   }
 
+
   deletePro(item: any): void {
-    const index = this.cartService.cartItems.indexOf(item);
-    if (index !== -1) {
-      this.cartService.cartItems.splice(index, 1);
+
+    this.cartService.removeFromCart(item);
+    console.log("deleted");
+
+    const emptyMessage = document.createElement("div");
+    emptyMessage.style.textAlign = "center";
+    emptyMessage.style.marginTop = "50vh";
+
+    const link = document.createElement("a");
+    link.innerText = "Continue Browsing";
+    link.href = "AllProducts";
+
+    emptyMessage.appendChild(link);
+
+    const container = document.querySelector(".container-fluid");
+    container!.innerHTML = "";
+
+    container!.appendChild(emptyMessage);
     }
-    console.log("del")
-  }
+
 
   }
+
+
 
 
 
