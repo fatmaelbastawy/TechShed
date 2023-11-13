@@ -5,8 +5,8 @@
         <h4 class="title">My Cart</h4>
         <hr class="product"><br>
         <div class="items">
-          <div class="row ">
-            <div class="col-9 mb-5 p-3 prodetails " id="prodetails" *ngFor="let item of cartService.cartItems">
+          <div class="row">
+            <div class="col-9 mb-5 p-3 prodetails" id="prodetails" *ngFor="let item of cartService.cartItems; trackBy: trackById">
               <div class="row">
                 <div class="col-3">
                   <img src="{{item.image}}" alt="" class="border p-3">
@@ -17,21 +17,39 @@
                 </div>
                 <div class="custom-num col-3">
                   <span>-</span>
-                  <input type="number" min="1" max="10" style="text-align: center;">
+                  <input type="number" [(ngModel)]="item.quantity" (change)="updateQuantity(item, $event)" min="1" max="10" style="text-align: center;">
                   <span>+</span>
                 </div>
-                 <div class="col-3 total ">
-              <h6 class="updatedSalary me-3">$70.00</h6>
-              <span class="close" id="close" (click)="deletePro(item)">&times;</span>
-            </div>
+                <div class="col-3 total">
+                  <h6 class="updatedPrice me-3">$ {{ item.price * item.quantity}}</h6>
+                  <span class="close" id="close" (click)="deletePro(item)">&times;</span>
+                </div>
               </div><br>
             </div>
-
           </div>
           <hr class="product">
         </div>
       </div>
-      <div class="col-lg-4 col-md-12 col-sm-12" id="order"></div>
+      <div class="col-lg-4 col-md-12 col-sm-12" id="order">
+        <div class="order">
+          <h3>Order Summary</h3>
+
+          <table class="table">
+            <tbody>
+              <tr *ngFor="let item of cartService.cartItems">
+                <td>{{item.title}}</td>
+                <td>{{item.quantity}}</td>
+                <td>{{item.price * item.quantity}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <hr>
+          <div class="total">
+            <strong>Total:</strong>
+            <span>$ {{ cartService.getTotalPrice() }}</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

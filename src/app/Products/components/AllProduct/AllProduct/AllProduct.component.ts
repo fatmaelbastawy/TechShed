@@ -1,6 +1,7 @@
 import { Component, OnInit ,ViewChild, ElementRef} from '@angular/core';
 import { ProductService } from 'src/app/Products/services/Product.service';
 import { FormsModule } from '@angular/forms';
+import { IProduct } from 'src/app/Products/Models/iproduct';
 @Component({
   selector: 'app-AllProduct',
   templateUrl: './AllProduct.component.html',
@@ -68,8 +69,8 @@ selectItem(item: string) {
     this.isTogglePvisible = !this.isTogglePvisible;
   }
 
-Products:any[]=[];
-Categories:any[]=[];
+Products:IProduct[]=[];
+Categories:string[]=[];
 selectedOption:string="Sort by"
 
 

@@ -10,6 +10,8 @@ import { SharedModule } from './Shared/Shared.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
 import { CheckoutComponent } from './Cart/components/Checkout/checkout.component';
+import { FormsModule } from '@angular/forms';
+
 RouterModule
 
 @NgModule({
@@ -25,10 +27,12 @@ RouterModule
     CartModule,
     SharedModule,
     FontAwesomeModule,
-    RouterModule
+    RouterModule,
+    FormsModule
 
 
   ],
+  exports:[FormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })

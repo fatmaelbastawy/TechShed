@@ -20,13 +20,10 @@
     <h4 class="mt-4">${{prod.price}}</h4>
 
     <label class="mb-2 mt-4" >Quantity</label><br>
-    <input type="number" placeholder="1" min="1" max="10" class="mb-5">
+    <input type="number" placeholder="0"  min="1" max="10" class="mb-5"  (change)="selectQuantity($event)">
 
-    <button class="btn cart rounded-5 mb-2" (click)="addToCart(prod)">Add to Cart</button>
+    <button class="btn cart rounded-5 mb-2" (click)="addToCart(prod,selectedQuantity)">Add to Cart</button>
     <button type="button" class="btn  buy rounded-5 " (click)="openModal()">Buy Now</button>
-
-
-
 
 
     </div>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import{HttpClient, HttpClientModule} from '@angular/common/http'
-
+import { FormsModule } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +29,8 @@ getProductById(id:any){
   return this.http.get("https://fakestoreapi.com/products/"+ id);
 }
 
-addToCart(id:number){
+addToCart(id:number,quantity:number){
   return this.getProductById(id);
+
 }
 }

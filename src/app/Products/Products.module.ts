@@ -10,6 +10,7 @@ import { SpinnerComponent } from '../Shared/components/spinner/spinner.component
 import { SharedModule } from '../Shared/Shared.module';
 import { ProductComponent } from './components/product/product.component';
 import { CartModule } from '../Cart/Cart.module';
+
 @NgModule({
   schemas: [NO_ERRORS_SCHEMA]
 ,
@@ -24,7 +25,8 @@ import { CartModule } from '../Cart/Cart.module';
     FormsModule,
     SharedModule,
     RouterModule,
-    CartModule
+    CartModule,
+
 
 
   ],
@@ -32,7 +34,8 @@ import { CartModule } from '../Cart/Cart.module';
     ProductService
   ],
   exports: [
-    AllProductComponent
+    AllProductComponent,
+    FormsModule
   ]
 })
 export class ProductsModule { }

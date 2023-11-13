@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { ProductDetailsComponent } from './Product-details.component';
+import { FormsModule } from '@angular/forms';
 
 describe('ProductDetailsComponent', () => {
   let component: ProductDetailsComponent;
@@ -11,7 +12,8 @@ describe('ProductDetailsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProductDetailsComponent ]
+      declarations: [ ProductDetailsComponent ],
+      imports:[FormsModule]
     })
     .compileComponents();
   }));
